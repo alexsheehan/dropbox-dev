@@ -97,6 +97,13 @@ function retinaImages() {
 	}
 }
 
+function videoClose() {
+	var closeButton = document.getElementById("video-close");
+	$(closeButton).on('click', function() {
+		$("video")[0].pause();
+	});
+}
+
 $(window).scroll(function(){
 	checkScroll();
 });
@@ -105,4 +112,5 @@ $(document).ready(function(){
 	homeBackground();
 	carousel();
 	retinaImages();
+	videoClose();
 });
