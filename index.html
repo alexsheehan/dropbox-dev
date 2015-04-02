@@ -3,6 +3,7 @@
 <link rel="icon" href="assets/favicon.ico" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet/less" type="text/css" href="assets/less/style.less"/>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="assets/js/less.js"></script>
 <script type="text/javascript" src="assets/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="assets/js/script.js"></script>
@@ -107,10 +108,10 @@
 				<h2>Work together simply with<br />Dropbox for Business</h2>
 			</div>
 			<div class="video-play-button col-sm-12 text-center">
-				<a href="#video-modal"><img class="play-button" src="assets/player_large.png" alt="Play"></a>
+				<a id="video-open" href="#video-modal"><img class="play-button" src="assets/player_large.png" alt="Play"></a>
 				<div id="video-modal" class="video-modal">
 					<div>
-						<video src="assets/video_dfb_small.mov" controls></video>
+						<video id="video" src="assets/video_dfb_small.mov" controls></video>
 						<a href="#close" id="video-close" title="Close" class="close">X</a>
 					</div>
 				</div>

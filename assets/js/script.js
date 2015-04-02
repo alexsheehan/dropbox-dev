@@ -97,10 +97,14 @@ function retinaImages() {
 	}
 }
 
-function videoClose() {
-	var closeButton = document.getElementById("video-close");
+function videoOpenClose() {
+	$("#video-open").click(function() {
+        $("#video")[0].play(); 
+    });
+
+	var closeButton = $("#video-close");
 	$(closeButton).on('click', function() {
-		$("video")[0].pause();
+		$("#video")[0].pause();
 	});
 }
 
@@ -112,5 +116,8 @@ $(document).ready(function(){
 	homeBackground();
 	carousel();
 	retinaImages();
-	videoClose();
+	videoOpenClose();
+	$(window)
+        .trigger('resize')
+        .trigger('scroll');
 });

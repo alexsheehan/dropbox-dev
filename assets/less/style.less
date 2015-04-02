@@ -3,7 +3,7 @@
 	padding: 0;
 }
 body {
-	font-family: OpenSans;
+	font-family: 'Open Sans', sans-serif;
 	width: 100%;
 }
 
@@ -88,8 +88,7 @@ a {
 		text-align: center;
 		vertical-align: middle;
 		.home-headline {
-			font-family: OpenSans-Light;
-			font-weight: normal;
+			font-weight: 300;
 			margin-bottom: 25px;
 		}
 		.home-subhead {
@@ -198,17 +197,18 @@ a {
 @keyframes leftTransition {
 	0%, 60%, 75%, 90%, 100% {
 		-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+		-moz-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
 		transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
 	}
 
 	0% {
+		-moz-opacity: 0;
 		opacity: 0;
 		-webkit-transform: translate3d(-100px);
 		transform: translateX(-100px);
 	}
 
 	60% {
-		opacity: 1;
 		-webkit-transform: translateX(25px);
 		transform: translateX(25px);
 	}
@@ -224,6 +224,8 @@ a {
 	}
 
 	100% {
+		-moz-opacity: 1;
+		opacity: 1;
 		-webkit-transform: none;
 		transform: none;
 	}
@@ -239,7 +241,7 @@ a {
 }
 
 .container-team {
-	min-height: 800px;
+	height: 800px;
 	text-align: center;
 	color: @light-gray;
 	.team-header {
@@ -248,23 +250,33 @@ a {
 	.carousel-images {
 		margin-top: 65px;
 		#slides {
-			margin: 0;
+			margin-left: auto;
+			margin-right: auto;
 			list-style: none;
 			position: relative;
-			width: 550px;
-			height: 310px;
+			@media (min-width: 768px) {
+				width: 100%;
+			}
+			@media (max-width: 767px) {
+				width: 550px;
+				height: 310px;
+			}
 		}
 		#slides img {
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: 540px;
-			height: 300px;
+			@media (min-width: 768px) {
+				width: 100%;
+			}
+			@media (max-width: 767px) {
+				width: 540px;
+				height: 300px;
+			}
 		}
 	}
 	.carousel-left-arrow {
-		height: 80%;
-		transform: translateY(50%);
+		padding-top: 150px;
 		button {
 			background: none;
 			border: none;
@@ -272,8 +284,7 @@ a {
 		}
 	}
 	.carousel-right-arrow {
-		height: 80%;
-		transform: translateY(50%);
+		padding-top: 150px;
 		button {
 			background: none;
 			border: none;
@@ -282,6 +293,9 @@ a {
 	}
 	.carousel-nav {
 		clear: both;
+		@media (min-width: 767px) {
+			margin-top: 350px;
+		}
 		#nav-items {
 			list-style: none;
 			padding: 0;

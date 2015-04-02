@@ -3,7 +3,7 @@
   padding: 0;
 }
 body {
-  font-family: OpenSans;
+  font-family: 'Open Sans', sans-serif;
   width: 100%;
 }
 h1 {
@@ -75,8 +75,7 @@ a {
   vertical-align: middle;
 }
 .container-home .home-main .home-headline {
-  font-family: OpenSans-Light;
-  font-weight: normal;
+  font-weight: 300;
   margin-bottom: 25px;
 }
 .container-home .home-main .home-subhead {
@@ -180,15 +179,16 @@ a {
   90%,
   100% {
     -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -moz-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   0% {
+    -moz-opacity: 0;
     opacity: 0;
     -webkit-transform: translate3d(-100px);
     transform: translateX(-100px);
   }
   60% {
-    opacity: 1;
     -webkit-transform: translateX(25px);
     transform: translateX(25px);
   }
@@ -201,6 +201,8 @@ a {
     transform: translateX(5px);
   }
   100% {
+    -moz-opacity: 1;
+    opacity: 1;
     -webkit-transform: none;
     transform: none;
   }
@@ -214,7 +216,7 @@ a {
   animation-fill-mode: both;
 }
 .container-team {
-  min-height: 800px;
+  height: 800px;
   text-align: center;
   color: #8899a7;
 }
@@ -225,22 +227,40 @@ a {
   margin-top: 65px;
 }
 .container-team .carousel-images #slides {
-  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   list-style: none;
   position: relative;
-  width: 550px;
-  height: 310px;
+}
+@media (min-width: 768px) {
+  .container-team .carousel-images #slides {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .container-team .carousel-images #slides {
+    width: 550px;
+    height: 310px;
+  }
 }
 .container-team .carousel-images #slides img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 540px;
-  height: 300px;
+}
+@media (min-width: 768px) {
+  .container-team .carousel-images #slides img {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .container-team .carousel-images #slides img {
+    width: 540px;
+    height: 300px;
+  }
 }
 .container-team .carousel-left-arrow {
-  height: 80%;
-  transform: translateY(50%);
+  padding-top: 150px;
 }
 .container-team .carousel-left-arrow button {
   background: none;
@@ -248,8 +268,7 @@ a {
   cursor: pointer;
 }
 .container-team .carousel-right-arrow {
-  height: 80%;
-  transform: translateY(50%);
+  padding-top: 150px;
 }
 .container-team .carousel-right-arrow button {
   background: none;
@@ -258,6 +277,11 @@ a {
 }
 .container-team .carousel-nav {
   clear: both;
+}
+@media (min-width: 767px) {
+  .container-team .carousel-nav {
+    margin-top: 350px;
+  }
 }
 .container-team .carousel-nav #nav-items {
   list-style: none;
