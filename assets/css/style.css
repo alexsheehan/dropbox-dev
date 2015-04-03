@@ -280,7 +280,7 @@ a {
 }
 @media (min-width: 767px) {
   .container-team .carousel-nav {
-    margin-top: 350px;
+    margin-top: 40%;
   }
 }
 .container-team .carousel-nav #nav-items {
@@ -301,7 +301,7 @@ a {
   background: #8899a7;
 }
 .container-team .carousel-description {
-  margin-top: 55px;
+  margin-top: 1.5%;
 }
 .container-team .basic-button-light {
   margin-top: 55px;
